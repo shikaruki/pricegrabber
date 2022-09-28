@@ -32,7 +32,7 @@ ALLOWED_HOSTS =[]
 # ['pricegrabber7.herokuapp.com','localhost']
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://pricegrabber7.herokuapp.com/'
+    'https://pricepiker.herokuapp.com/'
 ]
 # Application definition
 
