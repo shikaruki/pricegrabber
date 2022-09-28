@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-vh#rvd7v_(ve6ww9e5s85+lgd5i%6i@e$*t)cag8c+)&ihucvv
 # django-insecure-vh#rvd7v_(ve6ww9e5s85+lgd5i%6i@e$*t)cag8c+)&ihucvv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS =[] 
 # ['pricegrabber7.herokuapp.com','localhost']
