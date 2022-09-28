@@ -1,0 +1,11 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block css_file %}
+    <link rel="stylesheet" type="text/css" href={% static "css/search.css" %}>
+    <script src="https://kit.fontawesome.com/daf086dc64.js" crossorigin="anonymous"></script>
+{% endblock %}
+{% block title %}Product search{% endblock title %}
+{% block body %}
+    {% include 'home/search.html' %}
+{% endblock %}
+

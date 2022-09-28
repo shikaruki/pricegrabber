@@ -1,0 +1,38 @@
+<!doctype html> {% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href={% static "css/index.css" %}> {% block css_file %} {% endblock %}
+    <title>PriceGrabber | {% block title %} {% endblock title %} </title>
+    <script src="https://kit.fontawesome.com/daf086dc64.js" crossorigin="anonymous"></script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5719174822985183"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+    {%include 'home/header.html' %}
+    <!-- <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div> -->
+    {% if messages %} {% for message in messages %}
+    <div class=" container mt-2 alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+        <strong>{{message}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %} {% endif %} {% block body %} {% endblock %}
+    <amp-auto-ads type="adsense"
+        data-ad-client="ca-pub-5719174822985183">
+    </amp-auto-ads> 
+
+    {%include 'home/footer.html' %}
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+</html>

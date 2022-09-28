@@ -1,0 +1,51 @@
+{% extends 'home/base.html' %} {% load static %} {% block css_file %}
+<link rel="stylesheet" type="text/css" href={% static "css/contactInfo.css" %}> {% endblock %} {% block title %}Contact{% endblock title %} 
+{% block body %}
+<div class="container justify-content-md-center mb-5">
+    <div class="title mt-4">
+        <h1><u><i>{{info.0}}</i></u></h1>
+    </div>
+    <div class="row justify-content-lg-center">
+        <div class="col-md-8 contact">
+            <h3>{{info.1 }} </h3>
+            <hr />
+            <form class="form m-3 " action="contact" method="post">
+                {% csrf_token %}
+                <div class="row g-2 mb-3">
+                    <div class="col-md mr-3">
+                        <label class="form-label">First Name</label>
+                        <input type="text" class="form-control" placeholder="Ravi" id="firstName" name="firstName">
+                    </div>
+                    <div class="col-md mr-3">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" class="form-control" placeholder="Kumar" id="lastName" name="lastName">
+                    </div>
+                </div>
+
+                <div class="row g-2 mb-3">
+                    <div class="col-md mr-3">
+                        <label class="form-label">Email</label>
+                        <input type="text" class="form-control" placeholder="Email......" id="email" name="email">
+                    </div>
+                    <div class="col-md mr-3">
+                        <label class="form-label">Mobile No.</label>
+                        <input type="text" class="form-control" placeholder="Ex. +91 1234567890" id="phone" name="phone">
+                    </div>
+                </div>
+                <div class="row g-1 mb-3">
+                    <label class="form-label">Message</label>
+                    <textarea class="form-control" placeholder="Leave your message here..." id="message" name="message" style="height: 100px"></textarea>
+
+                </div>
+
+                <button type="submit" class="btn btn-outline-primary">Send</button>
+            </form>
+        </div>
+
+
+
+    </div>
+
+</div>
+
+{% endblock %}

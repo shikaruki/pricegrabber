@@ -1,0 +1,40 @@
+{% extends 'userLogin/userDashboard.html' %}
+{% load static %}
+{% block body %}
+<div class="container mt-4">
+    <div class="row justify-content-md-center">
+        {% if lists|length > 0 %}
+            <table class="table table-dark table-hover table-striped table-responsive-md">
+                <thead>
+                <tr >
+                    <th scope="col">#</th>
+                    <th scope="col">Product title</th>
+                    <th scope="col">Current Price</th>
+                    <th scope="col">Old price</th>
+                    <th scope="col">website</th>
+                    <th scope="col">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for item in lists reversed %}    
+                        <tr>
+                            <th scope="row">{{forloop.counter}}</th>
+                            <td><a href="{{item.link}}" target="blank">{{item.product_name}}</a></td>
+                            <td>{{item.curr_price}}</td>
+                            <td>{{item.old_price}}</td>
+                            <td>{{item.website}}</td>
+                            <td>
+                                <a href="{% url 'delete' item.id %}" class="btn btn-danger">Remove</a>
+                                <a href="{% url 'refresh' item.id %}" class="btn btn-success">Refresh</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <h4 class="text-center text-info">You haven't subscribe for any product yet!</h4>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

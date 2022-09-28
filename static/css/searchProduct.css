@@ -1,0 +1,30 @@
+body{
+    margin: 0;
+    top:0;
+    font-family: 'Courier New', Courier, monospace;
+}
+.search{
+    position: absolute;
+    top:0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    background:#2b2bb0 ;
+    transition: .5s;
+}
+.search .icon{
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    font-size: 30px;
+    color: #FFF;
+    text-align: center;
+    position: absolute;
+    top:0;
+    right: 0;
+    cursor: pointer;
+}
+.search .icon::before{
+    content: '\f002';
+    font-family: fontAwesome;
+}

@@ -1,0 +1,57 @@
+{% extends 'home/base.html' %} {% load static %} {% block css_file %}
+<link rel="stylesheet" type="text/css" href={% static "css/register.css" %}> {% endblock %} {% block title %}New user registration{% endblock title %} {% block body %}
+<div class="container">
+    <div class="row centered-form justify-content-center align-items-center">
+        <div class="title mt-4 text-center text-light">
+            <h1><u><i>Registration Form</i></u></h1>
+        </div>
+        <div class="col-md-6 col-sm-10 panel bg-light">
+            <form class="form m-3 " action="/signup" method="POST">
+                {% csrf_token %}
+                <h5 class="panel-title">Register yourself by giving Information</h5>
+                <hr/>
+                <div class="row mt-2 mb-2">
+                    <div class="col-sm-4 col-md-4">
+                        <div class="form-group">
+                            <label for="username" class="text-info">Username</label><br>
+                            <input type="text" name="username" id="username" class="form-control input-sm" placeholder="Username" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-md-4">
+                        <div class="form-group">
+                            <label for="username" class="text-info">First Name</label><br>
+                            <input type="text" name="fname" id="fname" class="form-control input-sm" placeholder="First Name" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-md-4">
+                        <div class="form-group">
+                            <label for="username" class="text-info">Last Name</label><br>
+                            <input type="text" name="lname" id="lname" class="form-control input-sm" placeholder="Last Name" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="text-info">E-mail</label><br>
+                    <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address" required>
+                </div>
+                <div class="row mt-2 mb-2">
+                    <div class="col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <label for="username" class="text-info">Password</label><br>
+                            <input type="password" name="pass1" id="pass1" class="form-control input-sm" placeholder="Password" required>
+                        </div>
+                    </div>
+                    <div class=" col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <label for="username" class="text-info">Confirm password</label><br>
+                            <input type="password" name="pass2" id="pass2" class="form-control input-sm" placeholder="Confirm Password" required>
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+            </form>
+            </div>
+        </div>
+
+        {% endblock %}
